@@ -1,0 +1,186 @@
+.techstack {
+  width: 100%;
+  position: relative;
+  height: auto;
+  min-height: 100vh;
+  margin: auto;
+  padding: 140px 0 80px 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.techstack h2 {
+  font-size: 80px;
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 60px;
+  position: relative;
+  width: 100%;
+  top: auto;
+  left: auto;
+}
+
+.tech-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  width: var(--cWidth);
+  max-width: 1200px;
+  margin: 0 auto;
+  box-sizing: border-box;
+  z-index: 10;
+}
+
+.bento-card {
+  background: rgba(15, 12, 17, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+  border-radius: 20px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 380px;
+  transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.bento-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(800px circle at var(--x, 0px) var(--y, 0px), rgba(194, 164, 255, 0.08), transparent 40%);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  pointer-events: none;
+}
+
+.bento-card:hover::before {
+  opacity: 1;
+}
+
+.bento-card:hover {
+  transform: translateY(-8px);
+  border-color: rgba(194, 164, 255, 0.35);
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.4);
+}
+
+.bento-card-header h3 {
+  font-size: 20px;
+  letter-spacing: 3px;
+  font-weight: 500;
+  color: var(--accentColor);
+  margin-top: 0;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+}
+
+.bento-card-header p {
+  font-size: 13px;
+  color: #adacac;
+  line-height: 1.6;
+  font-weight: 300;
+  margin-bottom: 40px;
+}
+
+.skills-tag-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.skill-tag {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 12px;
+  padding: 8px 16px;
+  font-size: 13px;
+  color: #e5e5e5;
+  transition: all 0.3s ease;
+}
+
+.skill-tag:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.05);
+}
+
+.skill-icon {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.skill-tag:hover .skill-icon {
+  transform: rotate(15deg) scale(1.1);
+}
+
+/* Custom icon colors */
+.react { color: #61dafb; }
+.nextjs { color: #ffffff; }
+.typescript { color: #3178c6; }
+.javascript { color: #f7df1e; }
+.tailwind { color: #38bdf8; }
+.vite { color: #646cff; }
+.html5 { color: #e34f26; }
+.css3 { color: #1572b6; }
+.nodejs { color: #339933; }
+.express { color: #eeeeee; }
+.python { color: #3776ab; }
+.sql { color: #00758f; }
+.mysql { color: #4479a1; }
+.postgres { color: #4169e1; }
+.supabase { color: #3ecf8e; }
+.flask { color: #eeeeee; }
+.capacitor { color: #119eff; }
+.git { color: #f05032; }
+.github { color: #ffffff; }
+.figma { color: #f24e1e; }
+.render { color: #46e3b7; }
+.netlify { color: #00ad9f; }
+.linux { color: #fcc624; }
+
+/* Responsive adjustments */
+@media screen and (max-width: 1024px) {
+  .tech-bento-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .bento-card {
+    min-height: auto;
+    padding: 30px;
+  }
+  .techstack h2 {
+    font-size: 55px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .techstack {
+    padding: 80px 0 40px 0;
+  }
+  .techstack h2 {
+    font-size: 38px;
+  }
+  .bento-card {
+    padding: 24px;
+  }
+  .skill-tag {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
+}
