@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ScrollTrigger } from "gsap-trial/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { 
   FaReact, FaNodeJs, FaPython, FaHtml5, FaCss3Alt, FaGithub, FaGitAlt, FaFigma, FaDatabase
 } from "react-icons/fa";
